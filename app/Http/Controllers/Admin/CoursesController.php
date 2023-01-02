@@ -17,4 +17,10 @@ class CoursesController extends Controller
     {
         return Courses::limit(4)->get();
     }
+
+    public function details(Request $request)
+    {
+        $id = $request->id;
+        return Courses::where('id', $id)->get();
+    }
 }

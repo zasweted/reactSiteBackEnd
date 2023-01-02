@@ -29,3 +29,4 @@ Route::post('contactStore', [ContactController::class, 'store']);
 // my courses routes
 Route::get('/coursesDataAll', [CoursesController::class, 'allData']);
 Route::get('/coursesHomePageData', [CoursesController::class, 'homePageData']);
+Route::post('/courseDetails', [CoursesController::class, 'details']);

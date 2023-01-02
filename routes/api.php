@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ClientReviewController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\CoursesController;
 use App\Http\Controllers\Admin\TechChartController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,6 @@ Route::get('/chartData', [TechChartController::class, 'allData']);
 Route::get('/clientReviewData', [ClientReviewController::class, 'allData']);
 //contact form routes
 Route::post('contactStore', [ContactController::class, 'store']);
+// my courses routes
+Route::get('/coursesDataAll', [CoursesController::class, 'allData']);
+Route::get('/coursesHomePageData', [CoursesController::class, 'homePageData']);

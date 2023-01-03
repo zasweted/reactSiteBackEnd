@@ -17,4 +17,10 @@ class ProjectController extends Controller
     {
         return Projects::limit(3)->get();
     }
+
+    public function details(Request $request)
+    {
+        $id = $request->id;
+        return Projects::where('id', $id)->get();
+    }
 }

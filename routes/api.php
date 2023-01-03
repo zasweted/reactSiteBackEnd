@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\CoursesController;
 use App\Http\Controllers\Admin\FooterController;
 use App\Http\Controllers\Admin\InformationController;
+use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TechChartController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,3 +43,10 @@ Route::get('/footerData', [FooterController::class, 'allData']);
 
 //information routes
 Route::get('/informationData', [InformationController::class, 'allData']);
+
+//services routes
+Route::get('/servicesData', [ServiceController::class, 'allData']);
+
+//projects routes
+Route::get('/projectsDataAll', [ProjectController::class, 'allData']);
+Route::get('/projectsHomePageData', [ProjectController::class, 'homePageData']);

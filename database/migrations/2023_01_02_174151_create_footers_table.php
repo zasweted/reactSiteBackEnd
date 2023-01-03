@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('facebook');
+            $table->string('linkedin');
             $table->string('discord');
             $table->string('github');
             $table->string('footer_credit');

@@ -10,16 +10,24 @@ class ContactController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate([
-            'contact_name' => 'required',
-            'contact_email' => ['required', 'email'],
-            'contact_message' => 'required'
+
+        $decoded = json_decode($request->getContent(), true);
+        // $messageArr = [
+        //     'name' => $decoded['name'],
+        //     'email' => $decoded['email'],
+        //     'message' => $decoded['message']
+        // ];
+
+        $decoded->validate([
+            'name' => 'required',
+            'email' => ['required', 'email'],
+            'message' => 'required'
         ]);
 
         Contact::create([
-            'contact_name' => $request->contact_name,
-            'contact_email' => $request->contact_email,
-            'contact_message' => $request->contact_message
+            'contact_name' => $decoded->name,
+            'contact_email' => $decoded->email,
+            'contact_message' => $decoded->message
         ]);
 
         return response('200');
